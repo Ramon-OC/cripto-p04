@@ -1,0 +1,41 @@
+\begin{enumerate}
+\item ¿Cuántos primos relativos hay en $Z_{256}$?
+
+
+Primero, vamos a descomponer en factores primos a 256:
+
+  $$ 256 = 2^8$$
+  
+
+Con la fórmula del totiente de Euler podemos saber el númerp de primos relativos:
+
+ $$\phi(256) = 256 \times \frac{1}{2} = 128$$
+
+
+Por lo tanto, el número de primos relativos en $ Z_{256} $ es $ \phi(256) = 128 $.
+
+\item Sea, con A un alfabeto cualquiera. ¿qué se debe
+cumplir para que f sea una función biyectiva?
+\item ¿Cuántas posibles combinaciones no triviales existen para cifrar bytes con César, Decimado
+y Afin?
+\begin{itemize}
+\item \textbf{Cifrado Cesar}
+
+Primero debemos notar que los bytes tienen 256 valores.
+Para el \textbf{Cifrado César},  sabemos funciona con un desplazamiento, en el que cada byte se reemplaza con $(x + k) mod 256$ donde k es la llave del desplazamiento. Por lo tanto, si se está usando un desplazamiento, solo tenemos tantas combinaciones como valores, por lo que tenemos \textbf{256 combinaciones}.
+
+\item \textbf{Cifrado Decimado}
+El cifrado decimado funciona cuando multiplicamos el valor del byte x por un llave k, para después hacer $mod 256$. Entonces, si qieremos invertir esta operación, $k$ debe der ser primo relativo  de 256, y como ya vimos anteriormente, 256 solo tiene 1\textbf{28 primos relativos} 
+
+\item \textbf{Cifrado Afin}
+El cifrado afín es una combinación del cifrado César y el cifrado Decimado, el cuál utiliza la siguiente función $(a\cdot x + b) mod 256$ en el que a es una constante primo relativo y b es una constante de desplazamiento.
+Así que la combinación de los dos nos da $128 \cdot 255 = 32, 640$
+\end{itemize}
+\item ¿Por qué el sistema de archivos de UNIX, aunque un archivo tenga una extensión diferente
+(o incluso no tenga), sigue reconociendo al archivo original?
+\item ¿Por qué los archivos descifrados tienen exactamente el mismo tamaño que antes de cifrar,
+pero no pudimos leerlos? ¿Por qué no tuvimos que agregar/quitar nada?
+\item Ya que base64 no es un cifrado, sino codificación, ¿en qué casos podemos usarlo?
+\item Supongamos que estuvieras en Hogwarts y tuvieras que utilizar un búho para comunicarte,
+¿cuál crees que sería la mejor opción para mandar mensajes seguros a través de la lechuza?
+\end{enumerate}
