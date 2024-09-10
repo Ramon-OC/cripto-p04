@@ -1,15 +1,16 @@
-import sys
+import argparse
 from cifrador_afin import CifradorAfin
 
 def main():
-    if len(sys.argv) != 2:
-        print("Uso: python main.py <ruta_al_archivo>")
-        sys.exit(1)
-    
-    file_path = sys.argv[1]
-    
-    cifrador = CifradorAfin()
-    cifrador.descifrar_archivo(file_path)
+    # Configurar el parser de argumentos
+    parser = argparse.ArgumentParser(description='Descifra archivos usando cifrado afín.')
+    parser.add_argument('file', type=str, help='Ruta del archivo cifrado')
 
-if __name__ == "__main__":
+    args = parser.parse_args()
+
+    cifrador = CifradorAfin()
+
+    cifrador.descifrar_archivo_completo(args.file)
+
+if __name__ == '__main__':
     main()
